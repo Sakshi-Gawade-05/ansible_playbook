@@ -1,0 +1,37 @@
+- name: Install MariaDB and Connect to Database
+  hosts: all
+  become: true
+  tasks:
+    - name: Install MariaDB Server
+      community.general.mysql_db:
+        state: present
+      vars:
+        mysql_packages:
+          - mariadb105-server
+
+    - name: Start MariaDB Service
+      service:
+        name: mariadb
+        state: started
+
+    - name: Secure MariaDB Installation
+      ansible.builtin.expect:
+        command: mysql_secure_installation
+        responses:
+          'Enter current password for root (enter for none):': ''
+          'Set root password? [Y/n]': 'Y'
+          'New password:': '12345'
+          'Re-enter new password:': '12345'
+          'Remove anonymous users? [Y/n]': 'Y'
+          'Disallow root login remotely? [Y/n]': 'Y'
+          'Remove test database and access to it? [Y/n]': 'Y'
+          'Reload privilege tables now? [Y/n]': 'Y'
+
+    - name: Create MySQL User
+     hosts: your_target_servers
+     become: true  
+
+      vars:
+        mysql_user: 'chaitanya'
+        mysql_password: '12345'
+        mysql_privileges: "my_node_app_db.*:ALL"  
