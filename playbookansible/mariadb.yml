@@ -1,5 +1,5 @@
 - name: Install MariaDB and Connect to Database
-  hosts: all
+  hosts: db_servers
   become: true
   tasks:
     - name: Install MariaDB Server
@@ -11,6 +11,7 @@
       service:
         name: mariadb
         state: started
+        enabled: yes
 
     - name: Secure MariaDB Installation
       ansible.builtin.expect:
