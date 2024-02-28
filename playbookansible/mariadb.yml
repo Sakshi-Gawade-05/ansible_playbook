@@ -3,7 +3,7 @@
   become: true
   tasks:
     - name: Install MariaDB Server
-      yum:
+      package:
         name: mariadb105-server
         state: present
            
