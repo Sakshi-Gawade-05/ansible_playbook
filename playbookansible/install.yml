@@ -1,6 +1,6 @@
 - name: httpd
-   hosts: all
-   become: true
+  hosts: all
+  become: true
   tasks:
    - name: Ensure apache is at the latest version
      yum:
