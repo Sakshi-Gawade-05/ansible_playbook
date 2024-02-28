@@ -36,7 +36,7 @@
 
            - name: Create User
              ansible.builtin.mysql_user:
-            s    name: chaitanya
+                name: chaitanya
                 password: "12345"
                 priv: 'my_node_app_db.*:ALL'
                 state: present
