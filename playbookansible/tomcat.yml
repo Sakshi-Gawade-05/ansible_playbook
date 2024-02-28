@@ -19,6 +19,6 @@
         force_basic_auth: yes    
     - name: extract listrace.zip into/home/ec2-user/apache-tomcat-8.5.99/webapps/
       unarchive:
-          src: /home/ec2-user/webapps/listrace.zip
+          src: /opt/apache-tomcat-8.5.99/webapps/listrace.zip
           dest: /opt/apache-tomcat-8.5.99/webapps/
           remote_src: yes
