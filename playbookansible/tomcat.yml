@@ -9,7 +9,7 @@
         force_basic_auth: yes
     - name: extract apache-tomcat-8.5.99 in /home/ec2-user
       unarchive:
-        src: /home/ec2-user/apache-tomcat-8.5.99
+        src: /home/ec2-user/apache-tomcat-8.5.99.tar.gz
         dest: /opt/
         remote_src: yes
   
