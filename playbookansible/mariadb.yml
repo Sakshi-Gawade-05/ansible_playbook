@@ -3,12 +3,11 @@
   become: true
   tasks:
     - name: Install MariaDB Server
-      community.general.mysql_db:
-        state: present
-      vars:
-        mysql_packages:
-          - mariadb105-server
-
+        yum:
+            mariadb105-server
+       name: mariadb
+       state: present
+           
     - name: Start MariaDB Service
       service:
         name: mariadb
