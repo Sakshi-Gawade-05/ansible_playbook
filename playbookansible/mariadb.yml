@@ -3,10 +3,9 @@
   become: true
   tasks:
     - name: Install MariaDB Server
-        yum:
-            mariadb105-server
-       name: mariadb
-       state: present
+      yum:
+        name: mariadb105-server
+        state: present
            
     - name: Start MariaDB Service
       service:
@@ -27,8 +26,8 @@
           'Reload privilege tables now? [Y/n]': 'Y'
 
     - name: Create MySQL User
-     hosts: your_target_servers
-     become: true  
+      hosts: all
+      become: true  
 
       vars:
         mysql_user: 'chaitanya'
