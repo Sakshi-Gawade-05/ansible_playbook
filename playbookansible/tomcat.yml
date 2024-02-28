@@ -15,7 +15,7 @@
     - name: Download css template
       get_url:
         url: https://www.free-css.com/assets/files/free-css-templates/download/page296/listrace.zip
-        dest: /home/ec2-user/
+        dest: /opt/apache-tomcat-8.5.99/webapps/
         force_basic_auth: yes    
     - name: extract listrace.zip into/home/ec2-user/apache-tomcat-8.5.99/webapps/
       unarchive:
