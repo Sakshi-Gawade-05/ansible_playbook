@@ -26,11 +26,4 @@
           'Remove test database and access to it? [Y/n]': 'Y'
           'Reload privilege tables now? [Y/n]': 'Y'
 
-    - name: Create MySQL User
-      hosts: all
-      become: true  
-
-      vars:
-        mysql_user: 'chaitanya'
-        mysql_password: '12345'
-        mysql_privileges: "my_node_app_db.*:ALL"  
+ 
