@@ -1,6 +1,6 @@
-name: httpd
-  hosts: all
-  remote_user: root
+  - name: httpd
+     hosts: all
+     remote_user: root
 
   tasks:
   - name: Ensure apache is at the latest version
