@@ -1,5 +1,5 @@
 - name: Install MariaDB and Connect to Database
-  hosts: db_servers
+  hosts: all
   become: true
   tasks:
     - name: Install MariaDB Server
