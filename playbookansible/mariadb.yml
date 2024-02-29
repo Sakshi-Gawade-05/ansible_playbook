@@ -11,7 +11,7 @@
       service:
         name: mariadb
         state: started
-        enabled: yes
+        enabled: true
 
     - name: Secure MariaDB Installation
       ansible.builtin.expect:
@@ -25,6 +25,7 @@
           'Disallow root login remotely? [Y/n]': 'Y'
           'Remove test database and access to it? [Y/n]': 'Y'
           'Reload privilege tables now? [Y/n]': 'Y'
+
     - name: Install MariaDB and Secure Installation
         tasks:
            - name: Create Database
